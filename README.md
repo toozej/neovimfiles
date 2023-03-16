@@ -17,5 +17,5 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ```
 3. Run vim plugin installation:
 ```
-nvim +PlugInstall +qall
+nvim +PlugInstall +qall +'TSInstallSync go'
 ```

@@ -16,6 +16,8 @@ Plug 'ray-x/go.nvim'
 Plug 'ray-x/guihua.lua'
 Plug 'mfussenegger/nvim-lint'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 
 " Auto Pairs
 Plug 'jiangmiao/auto-pairs'
@@ -83,6 +85,22 @@ Plug 'tpope/vim-dispatch'
 Plug 'dense-analysis/ale'
 
 call plug#end()
+
+" neovim-specific plug-in configs
+" ray-x/go
+lua <<EOF
+local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+   require('go.format').goimport()
+  end,
+  group = format_sync_grp,
+})
+
+require('go').setup()
+EOF
+
 
 
 " Display and UI Settings
