@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Check out the codebase.
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup test environment
         run: docker pull ghcr.io/toozej/neovim-ci:latest
