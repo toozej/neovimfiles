@@ -336,10 +336,16 @@ augroup latex
     autocmd BufWrite *.tex Dispatch!
 augroup END
 
+" compile PlantUML files to PNG on write
+augroup plantuml
+    autocmd!
+    autocmd BufWritePost *.puml !PLANTUML_LIMIT_SIZE=100000 plantuml <afile>
+augroup END
+
 " validate circleci config.yml files on write
 augroup yaml_circleci
     autocmd!
-    autocmd BufWritePost .circleci/config.yml !circleci config validate <afile>
+    autocmd BufWritePost .circleci/config.yml !circleci --token $CIRCLE_TOKEN --org-slug github/$GH_ORG config validate <afile>
 augroup END
 
 " turn on cursorcolumn for yaml files
