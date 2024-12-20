@@ -8,10 +8,9 @@ name: CI
     - cron: "0 1 * * 1"
 
 jobs:
-
   test:
     name: Test
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check out the codebase.
@@ -27,3 +26,11 @@ jobs:
           cp -r /workspace/ /root/.config/nvim/; 
           curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim;
           nvim +'PlugInstall --sync' +qa;"
+
+  workflow-keepalive:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - uses: liskin/gh-workflow-keepalive@v1
