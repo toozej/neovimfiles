@@ -260,8 +260,6 @@ nnoremap Y y$
 nnoremap <F10> :%retab<CR>
 "scroll sync toggle
 nnoremap <F11> scb!
-"paste mode
-set pastetoggle=<F12>
 "forcefully write using sudo tee
 cmap w!! w !sudo tee >/dev/null %
 
