@@ -17,7 +17,7 @@ Plug 'ray-x/guihua.lua'
 Plug 'mfussenegger/nvim-lint'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 
 " Auto Pairs
 Plug 'jiangmiao/auto-pairs'
@@ -35,7 +35,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 
 " Golang
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'branch': 'master', 'do': ':GoUpdateBinaries' }
 
 " Vim Polyglot - language support
 Plug 'sheerun/vim-polyglot'
