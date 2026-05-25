@@ -10,7 +10,7 @@ filetype indent on
 call plug#begin()
 
 " neovim-specific plug-ins
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'main'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'ray-x/go.nvim'
 Plug 'ray-x/guihua.lua'
